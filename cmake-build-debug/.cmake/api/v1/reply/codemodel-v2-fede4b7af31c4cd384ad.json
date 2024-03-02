@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "code",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "code::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-code-Debug-0e5b47713b01bb08b63c.json",
+					"name" : "code",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "str::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-str-Debug-8bd9b46c2994ad0d0fe4.json",
+					"name" : "str",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/\u043c\u0443\u0441\u043e\u0440/\u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043a\u0438/\u043e\u043f/laba_op_17/code/cmake-build-debug",
+		"source" : "D:/\u043c\u0443\u0441\u043e\u0440/\u043b\u0430\u0431\u043e\u0440\u0430\u0442\u043e\u0440\u043a\u0438/\u043e\u043f/laba_op_17/code"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

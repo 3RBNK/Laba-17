@@ -1,0 +1,7 @@
+# ninja log v5
+1	64	7311016741925233	CMakeFiles/code.dir/main.c.obj	5f7538d2a8ffca7a
+116	184	7311016743078778	code.exe	77c29d99c4331163
+4	68	7311016741965249	CMakeFiles/str.dir/string/string_.c.obj	e6bbeee18d8af248
+7	242	7311003358807483	CMakeFiles/code.dir/string/string_.c.obj	15015adf57255b74
+1	122	7311023051575161	build.ninja	8a3326dfa8dfd91a
+68	116	7311016742445384	libstr.a	89cf9dc3f6f76feb

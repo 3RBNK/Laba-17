@@ -3,8 +3,9 @@
 //
 
 #include <stdio.h>
-#include "string_.h"
 #include <ctype.h>
+
+#include "string_.h"
 
 
 size_t strlen_(const char* begin) {
@@ -31,5 +32,32 @@ char* find_non_space(char* begin) {
 
 
 char* find_space(char* begin) {
+    while (*begin != '\0' && !isspace(*begin))
+        begin++;
 
+    return begin;
+}
+
+
+char* find_non_space_reverse(char* r_begin, const char* r_end) {
+    while (r_begin != r_end && isspace(*r_begin))
+        r_begin--;
+    return r_begin;
+}
+
+
+char* find_space_reverse(char* r_begin, const char* r_end) {
+    while (r_begin != r_end && !isspace(*r_begin))
+        r_begin--;
+    return r_begin;
+}
+
+
+int is_equal_string(const char* lhs, const char* rhs) {
+    while (*lhs != '\0' && *rhs != '\0' && *lhs == *rhs) {
+        lhs++;
+        rhs++;
+    }
+
+    return *lhs - *rhs;
 }

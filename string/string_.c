@@ -61,3 +61,46 @@ int is_equal_string(const char* lhs, const char* rhs) {
 
     return *lhs - *rhs;
 }
+
+
+char* copy(const char* begin_source, const char* end_source, char* begin_destination) {
+    char* start = begin_source;
+
+    while (start != end_source) {
+        *begin_destination = *start;
+        begin_destination++;
+        start++;
+    }
+
+    return begin_destination;
+}
+
+
+char* copy_if(const char* begin_source, const char* end_source, char* begin_destination, int (*f)(int)) {
+    char* start = begin_source;
+
+    while (start != end_source) {
+        if (f(*start))
+            *begin_destination = *start;
+
+        begin_destination++;
+        start++;
+    }
+
+    return begin_destination;
+}
+
+
+char* copy_if_reverse(const char* r_begin_source, const char* r_end_source, char* begin_destination, int (*f)(int)) {
+    char* start = r_begin_source;
+
+    while (start != r_end_source) {
+        if (f(*start))
+            *begin_destination = *start;
+
+        start--;
+        begin_destination++;
+    }
+
+    return begin_destination;
+}

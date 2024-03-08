@@ -1,15 +1,7 @@
 # ninja log v5
-2	69	7311554295483573	CMakeFiles/code.dir/main.c.obj	5f7538d2a8ffca7a
-121	189	7311554296645313	code.exe	77c29d99c4331163
-6	73	7311554295523881	CMakeFiles/str.dir/string/string_.c.obj	e6bbeee18d8af248
-7	242	7311003358807483	CMakeFiles/code.dir/string/string_.c.obj	15015adf57255b74
-1	122	7311023051575161	build.ninja	8a3326dfa8dfd91a
-73	121	7311554296003904	libstr.a	89cf9dc3f6f76feb
-2	87	7311554509774430	CMakeFiles/code.dir/main.c.obj	5f7538d2a8ffca7a
-8	88	7311554509774430	CMakeFiles/str.dir/string/string_.c.obj	e6bbeee18d8af248
-88	141	7311554510304455	libstr.a	89cf9dc3f6f76feb
-141	217	7311554511028587	code.exe	77c29d99c4331163
 2	273	7313446179873612	CMakeFiles/code.dir/main.c.obj	5f7538d2a8ffca7a
-32	277	7313446179903626	CMakeFiles/str.dir/string/string_.c.obj	e6bbeee18d8af248
-277	418	7313446181310165	libstr.a	89cf9dc3f6f76feb
 418	705	7313446184163040	code.exe	77c29d99c4331163
+32	277	7313446179903626	CMakeFiles/str.dir/string/string_.c.obj	e6bbeee18d8af248
+7	242	7311003358807483	CMakeFiles/code.dir/string/string_.c.obj	15015adf57255b74
+1	122	7315968069193288	build.ninja	8a3326dfa8dfd91a
+277	418	7313446181310165	libstr.a	89cf9dc3f6f76feb

@@ -5,15 +5,10 @@
 
 
 int main() {
-    char* begin_destination = (char*) malloc(20 * sizeof(char));
+    int a = 10;
+    float b = 1.0;
 
-    char str[4] = "one";
-
-    char* end =  copy(str, str+4, begin_destination);
-
-    puts(begin_destination);
-
-    printf("%p\n%p\n%d", begin_destination, end, *(end - 1) == '\0');
+    printf("%d", a);
 
     return 0;
 }

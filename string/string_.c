@@ -2,7 +2,6 @@
 // Created by Kirill on 02.03.2024.
 //
 
-#include <stdio.h>
 #include <ctype.h>
 
 #include "string_.h"

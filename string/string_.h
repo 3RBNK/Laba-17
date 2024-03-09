@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <ctype.h>
 
 
 size_t strlen_(const char* begin);

@@ -106,3 +106,12 @@ char* copy_if_reverse(const char* r_begin_source, const char* r_end_source, char
 
     return begin_destination;
 }
+
+
+char* get_end_of_string(char* s) {
+    char* start = s;
+    while (*start != '\0')
+        start++;
+
+    return start;
+}

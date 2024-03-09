@@ -18,6 +18,12 @@
 extern char _string_buffer[MAX_STRING_SIZE + 1];
 
 
+typedef struct word_descriptor {
+    char* begin;
+    char* end;
+} word_descriptor;
+
+
 size_t strlen_(const char* begin);
 
 
@@ -46,5 +52,8 @@ char* copy_if(const char* begin_source, const char* end_source, char* begin_dest
 
 
 char* copy_if_reverse(const char* r_begin_source, const char* r_end_source, char* begin_destination, int (*f)(int));
+
+
+char* get_end_of_string(char* s);
 
 #endif //CODE_STRING__H

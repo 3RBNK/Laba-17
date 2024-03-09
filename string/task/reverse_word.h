@@ -8,12 +8,6 @@
 #include "../string_.h"
 
 
-typedef struct word_descriptor {
-    char* begin;
-    char* end;
-} word_descriptor;
-
-
 bool get_word(char* begin_search, word_descriptor* word) {
     word->begin = find_non_space(begin_search);
     if (*word->begin == '\0')

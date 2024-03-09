@@ -6,6 +6,7 @@
 
 #include "string_.h"
 
+char _string_buffer[MAX_STRING_SIZE + 1];
 
 size_t strlen_(const char* begin) {
     char* end = begin;

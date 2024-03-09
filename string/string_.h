@@ -11,6 +11,11 @@
 #include <ctype.h>
 
 
+#define MAX_STRING_SIZE 200
+
+extern char _string_buffer[MAX_STRING_SIZE + 1];
+
+
 size_t strlen_(const char* begin);
 
 

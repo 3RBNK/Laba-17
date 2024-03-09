@@ -5,9 +5,6 @@
 #ifndef CODE_REVERSE_WORD_H
 #define CODE_REVERSE_WORD_H
 
-#define MAX_STRING_SIZE 200
-char _string_buffer[MAX_STRING_SIZE + 1];
-
 #include "../string_.h"
 
 

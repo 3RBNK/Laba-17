@@ -9,17 +9,6 @@
 #include "../string_.h"
 
 
-//bool get_word(char* begin_search, word_descriptor* word) {
-//    word->begin = find_non_space(begin_search);
-//    if (*word->begin == '\0')
-//        return false;
-//
-//    word->end = find_space(word->begin);
-//
-//    return true;
-//}
-
-
 int are_words_equal(word_descriptor w1, word_descriptor w2) {
     while (*w1.begin && (*w1.begin == *w2.begin)) {
         w1.begin ++;

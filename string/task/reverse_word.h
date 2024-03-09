@@ -8,15 +8,7 @@
 #include "../string_.h"
 
 
-bool get_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
 
-    word->end = find_space(word->begin);
-
-    return true;
-}
 
 
 void digit_to_start(word_descriptor word) {

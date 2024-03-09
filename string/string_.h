@@ -24,6 +24,14 @@ typedef struct word_descriptor {
 } word_descriptor;
 
 
+typedef struct bag_of_words {
+    word_descriptor words[MAX_N_WORDS_IN_STRING];
+    size_t size;
+} bag_of_words;
+
+extern bag_of_words _bag;
+extern bag_of_words _bag2;
+
 size_t strlen_(const char* begin);
 
 
@@ -55,5 +63,8 @@ char* copy_if_reverse(const char* r_begin_source, const char* r_end_source, char
 
 
 char* get_end_of_string(char* s);
+
+
+bool get_word(char* begin_search, word_descriptor* word);
 
 #endif //CODE_STRING__H

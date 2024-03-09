@@ -40,9 +40,9 @@ void replace(char* source, char* w1, char* w2) {
 
 
     word_descriptor word;
-    while (get_word(rec_ptr, &word)) {
-        if (is_equal_string(word1.begin, word.begin))
-    }
-}
+//    while (get_word(rec_ptr, &word)) {
+//        if (is_equal_string(word1.begin, word.))
+//    }
+//}
 
 #endif //CODE_REPLACE_WORD_TO_WORD_H

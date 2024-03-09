@@ -12,6 +12,7 @@ add_library(str string/string_.h string/string_.c
         string/task/replace_digit_to_space.h
         string/task/replace_word_to_word.h
         string/task/lexicographical_order.h
+        string/task/print_revers_ordered.h
 )
 
 

@@ -3,18 +3,14 @@
 
 #include "string/string_.h"
 #include "string/task/reverse_word.h"
+#include "string/task/replace_digit_to_space.h"
 
 
 
 int main() {
-    word_descriptor word;
+    char s[20] = "f3b0c1d0d";
 
-    char s[] = "abcde 1234 5 jopa";
-
-    word.begin = find_non_space(s);
-    word.end = find_space(s);
-
-    reverse_word_in_string(s);
+    replace_digit_to_space(s);
 
     puts(s);
 

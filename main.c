@@ -6,14 +6,14 @@
 #include "string/task/replace_digit_to_space.h"
 #include "string/task/lexicographical_order.h"
 #include "string/task/print_revers_ordered.h"
-
+#include "string/task/counter_palindrome_word.h"
 
 
 int main() {
-    char s[20] = "dad mom son";
+    char s[20] = "dad, mom, sos";
 
-    bag_of_words bag;
-    print_reverse_ordered(&bag, s);
+    printf("%d\n", counter_palindrome_words(s));
+
 
     return 0;
 }

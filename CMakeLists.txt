@@ -13,6 +13,8 @@ add_library(str string/string_.h string/string_.c
         string/task/replace_word_to_word.h
         string/task/lexicographical_order.h
         string/task/print_revers_ordered.h
+        string/task/counter_palindrome_word.h
+        string/task/rearranging_words.h
 )
 
 

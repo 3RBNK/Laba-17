@@ -1,16 +1,23 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#include "string/task/letters_belong_string.h"
+#include "string/task/replace_word_to_word.h"
 
 
 
 int main() {
+    char s[] = "Hello world! world is beautiful. world";
 
-    char string[] = "net da da da";
-    char word[] = "etf";
+    char w1[] = "world";
+    char w2[] = "Earttt";
 
-    printf("%d", letters_belong_string(string, word));
+    printf("After: \n");
+    puts(s);
+
+    replace(s, w1, w2);
+
+    printf("Before: \n");
+    puts(s);
 
     return 0;
 }

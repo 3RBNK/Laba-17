@@ -16,6 +16,8 @@ add_library(str string/string_.h string/string_.c
         string/task/counter_palindrome_word.h
         string/task/rearranging_words.h
         string/task/letters_belong_string.h
+        string/task/complement_string.h
+        string/task/change_word_order.h
 )
 
 

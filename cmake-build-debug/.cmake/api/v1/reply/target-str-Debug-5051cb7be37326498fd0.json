@@ -78,7 +78,9 @@
 				8,
 				9,
 				10,
-				11
+				11,
+				12,
+				13
 			]
 		},
 		{
@@ -150,6 +152,16 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/letters_belong_string.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/complement_string.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/change_word_order.h",
 			"sourceGroupIndex" : 0
 		}
 	],

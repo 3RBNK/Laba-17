@@ -1,23 +1,19 @@
 #include <stdio.h>
 #include <malloc.h>
 
-#include "string/task/replace_word_to_word.h"
+#include "string/task/rearranging_words.h"
 
 
 
 int main() {
-    char s[] = "Hello world! world is beautiful. world";
+    char str1[] = "Hello world world world";
+    char str2[] = "";
+    char result[256] = "";
 
-    char w1[] = "world";
-    char w2[] = "Earttt";
+    merge_words(str1, str2, result);
 
-    printf("After: \n");
-    puts(s);
+    printf("%s\n", result);
 
-    replace(s, w1, w2);
-
-    printf("Before: \n");
-    puts(s);
 
     return 0;
 }

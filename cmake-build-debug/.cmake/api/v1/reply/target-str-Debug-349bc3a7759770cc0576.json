@@ -82,7 +82,8 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				16
 			]
 		},
 		{
@@ -174,6 +175,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/find_last_common_word.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/find_duplicate_words.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -35,8 +35,6 @@ char* find_space(char* begin) {
     while (*begin != '\0' && !isspace(*begin))
         begin++;
 
-    begin = *begin == '\0' ? begin - 1 : begin;
-
     return begin;
 }
 
@@ -136,4 +134,13 @@ bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word) {
     word->begin = word->begin == r_end ? word->begin : word->begin + 1;
 
     return true;
+}
+
+
+void print_word(word_descriptor word) {
+    while (word.begin <= word.end) {
+        printf("%c", *word.begin);
+        word.begin++;
+    }
+    printf("\n");
 }

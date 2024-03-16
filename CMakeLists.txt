@@ -20,6 +20,7 @@ add_library(str string/string_.h string/string_.c
         string/task/change_word_order.h
         string/task/print_word_before_first_word_with_a.h
         string/task/find_last_common_word.h
+        string/task/find_duplicate_words.h
 )
 
 

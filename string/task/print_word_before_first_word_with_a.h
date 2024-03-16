@@ -8,13 +8,7 @@
 #include "../string_.h"
 
 
-void print_word(word_descriptor word) {
-    while (word.begin != word.end) {
-        printf("%c", *word.begin);
-        word.begin++;
-    }
-    printf("\n");
-}
+
 
 
 bool is_letters_in_word(word_descriptor word, char letters) {

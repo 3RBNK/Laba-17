@@ -70,4 +70,7 @@ bool get_word(char* begin_search, word_descriptor* word);
 
 bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
+
+void print_word(word_descriptor word);
+
 #endif //CODE_STRING__H

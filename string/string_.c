@@ -64,17 +64,13 @@ int is_equal_string(const char* lhs, const char* rhs) {
 
 
 char* copy(const char* begin_source, const char* end_source, char* begin_destination) {
-    char* start = begin_source;
-
-    while (start != end_source) {
-        *begin_destination = *start;
-        begin_destination++;
-        start++;
+    while (begin_source != end_source) {
+        *begin_destination = *begin_source;
+        ++begin_source;
+        ++begin_destination;
     }
-
     return begin_destination;
 }
-
 
 char* copy_if(const char* begin_source, const char* end_source, char* begin_destination, int (*f)(int)) {
     char* start = begin_source;
@@ -123,6 +119,19 @@ bool get_word(char* begin_search, word_descriptor* word) {
         return false;
 
     word->end = find_space(word->begin);
+
+    return true;
+}
+
+
+bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word) {
+    if (word->begin == r_end)
+        return false;
+
+    word->end = find_non_space_reverse(r_begin, r_end);
+
+    word->begin = find_space_reverse(r_begin, r_end);
+    word->begin = word->begin == r_end ? word->begin : word->begin + 1;
 
     return true;
 }

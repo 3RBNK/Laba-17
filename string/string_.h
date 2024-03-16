@@ -11,9 +11,8 @@
 #include <ctype.h>
 
 
-
-#define MAX_N_WORDS_IN_STRING 100
 #define MAX_WORD_SIZE 20
+#define MAX_N_WORDS_IN_STRING 100
 #define MAX_STRING_SIZE 200
 
 extern char _string_buffer[MAX_STRING_SIZE + 1];
@@ -67,5 +66,8 @@ char* get_end_of_string(char* s);
 
 
 bool get_word(char* begin_search, word_descriptor* word);
+
+
+bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
 #endif //CODE_STRING__H

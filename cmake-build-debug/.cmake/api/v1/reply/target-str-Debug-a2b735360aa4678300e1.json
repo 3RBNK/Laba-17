@@ -80,7 +80,8 @@
 				10,
 				11,
 				12,
-				13
+				13,
+				14
 			]
 		},
 		{
@@ -162,6 +163,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/change_word_order.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/print_word_before_first_word_with_a.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -57,15 +57,4 @@ void reverse_word_in_string(char* s) {
 }
 
 
-bool get_word_reverse(char* r_begin_search, char* r_end_search, word_descriptor* word) {
-    word->begin = find_non_space_reverse(r_begin_search, r_end_search);
-    if (word->begin == r_end_search)
-        return false;
-
-    word->end = find_space_reverse(word->begin, r_end_search);
-
-    return true;
-}
-
-
 #endif //CODE_REVERSE_WORD_H

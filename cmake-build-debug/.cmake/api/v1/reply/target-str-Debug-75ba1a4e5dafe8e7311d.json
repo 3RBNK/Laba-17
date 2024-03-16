@@ -81,7 +81,8 @@
 				11,
 				12,
 				13,
-				14
+				14,
+				15
 			]
 		},
 		{
@@ -168,6 +169,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/print_word_before_first_word_with_a.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/find_last_common_word.h",
 			"sourceGroupIndex" : 0
 		}
 	],

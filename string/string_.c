@@ -35,6 +35,8 @@ char* find_space(char* begin) {
     while (*begin != '\0' && !isspace(*begin))
         begin++;
 
+    begin = *begin == '\0' ? begin - 1 : begin;
+
     return begin;
 }
 

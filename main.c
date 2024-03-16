@@ -3,7 +3,7 @@
 
 #include "string/string_.h"
 #include "string/task/print_word_before_first_word_with_a.h"
-
+#include "string/task/find_last_common_word.h"
 
 
 void test(char* str1) {
@@ -28,11 +28,21 @@ void test(char* str1) {
 
 
 int main() {
-    char s[] = "world world";
+    char s1[] = "i python love";
+    char s2[] = "python is cool";
 
-    print_word_before_first_word_a(s);
+    word_descriptor word = find_last_common_word(s1, s2);
 
+    if (word.begin != NULL && word.end != NULL) {
+        while (word.begin != word.end) {
+            printf("%c", *word.begin);
+            word.begin++;
+        }
+    } else {
+        printf("No common word found.\n");
+    }
 
     return 0;
 }
+
 

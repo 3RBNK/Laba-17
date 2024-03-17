@@ -10,6 +10,7 @@
 
 #include "../string_.h"
 
+
 bool letters_belong_string(char* string, char* word) {
     bool include[26] = {0};
 

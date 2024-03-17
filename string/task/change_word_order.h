@@ -16,20 +16,6 @@ void print_word(word_descriptor word) {
     }
     printf("\n");
 }
-/*
- *     printf("%s\n", s);
-
-    printf("%c %c\n", *s, *(s + strlen_(s) - 1));
-
-            printf("%c %c\n", *r_buffer_end, *r_buffer_begin);
-    printf("%p %p %lld\n", r_buffer_end, r_buffer_begin, r_buffer_begin - r_buffer_end);
-    printf("\n");
-
-                printf("%p %p\n", word.begin, word.end);
-
-        printf("%p %p\n", word.begin, word.end);
-        printf("%c %c\n", *word.begin, *word.end);
-        printf("\n");*/
 
 
 void change_word_order(char *s) {

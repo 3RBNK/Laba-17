@@ -2,16 +2,15 @@
 #include <malloc.h>
 
 #include "string/string_.h"
-#include "string/task/find_preceding-word.h"
+#include "string/task/remove_palindrome_word.h"
 
 
 int main() {
-    char s1[] = "i love grusha";
-    char s2[] = "jopa love apple";
+    char s1[] = "i love oooo jopa yoy";
 
-    word_descriptor word = find_preceding_word(s1, s2);
+    remove_palindrome_word(s1);
 
-    print_word(word);
+    puts(s1);
 
     return 0;
 }

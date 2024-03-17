@@ -85,7 +85,8 @@
 				15,
 				16,
 				17,
-				18
+				18,
+				19
 			]
 		},
 		{
@@ -192,6 +193,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/find_preceding-word.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/remove_palindrome_word.h",
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -34,7 +34,6 @@ int print_word_before_first_word_a(char* s) {
 
 
 
-
     if (is_letters_in_word(word1, 'a') || is_letters_in_word(word1, 'A')) {
         printf("Word with a first");
         return 1;

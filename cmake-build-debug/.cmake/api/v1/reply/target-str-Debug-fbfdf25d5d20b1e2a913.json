@@ -83,7 +83,8 @@
 				13,
 				14,
 				15,
-				16
+				16,
+				17
 			]
 		},
 		{
@@ -180,6 +181,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/find_duplicate_words.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/get_word_except_last.h",
 			"sourceGroupIndex" : 0
 		}
 	],

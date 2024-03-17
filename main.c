@@ -2,13 +2,16 @@
 #include <malloc.h>
 
 #include "string/string_.h"
-#include "string/task/find_duplicate_words.h"
+#include "string/task/get_word_except_last.h"
 
 
 int main() {
-    char s[] = "python python";
+    char s[] = "python";
+    char dest[50] = "";
 
-    printf("%d", are_identical_words_in_string(s));
+    get_word_except_last(s, dest);
+
+    puts(dest);
 
     return 0;
 }

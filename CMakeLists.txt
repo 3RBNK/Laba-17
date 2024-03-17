@@ -22,6 +22,7 @@ add_library(str string/string_.h string/string_.c
         string/task/find_last_common_word.h
         string/task/find_duplicate_words.h
         string/task/get_word_except_last.h
+        string/task/find_preceding-word.h
 )
 
 

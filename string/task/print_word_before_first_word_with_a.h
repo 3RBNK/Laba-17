@@ -8,9 +8,6 @@
 #include "../string_.h"
 
 
-
-
-
 bool is_letters_in_word(word_descriptor word, char letters) {
     char* start = word.begin;
 

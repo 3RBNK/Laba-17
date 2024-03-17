@@ -84,7 +84,8 @@
 				14,
 				15,
 				16,
-				17
+				17,
+				18
 			]
 		},
 		{
@@ -186,6 +187,11 @@
 		{
 			"backtrace" : 1,
 			"path" : "string/task/get_word_except_last.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "string/task/find_preceding-word.h",
 			"sourceGroupIndex" : 0
 		}
 	],

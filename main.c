@@ -2,16 +2,16 @@
 #include <malloc.h>
 
 #include "string/string_.h"
-#include "string/task/get_word_except_last.h"
+#include "string/task/find_preceding-word.h"
 
 
 int main() {
-    char s[] = "python";
-    char dest[50] = "";
+    char s1[] = "i love grusha";
+    char s2[] = "jopa love apple";
 
-    get_word_except_last(s, dest);
+    word_descriptor word = find_preceding_word(s1, s2);
 
-    puts(dest);
+    print_word(word);
 
     return 0;
 }

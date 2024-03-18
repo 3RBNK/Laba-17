@@ -20,21 +20,57 @@ void get_bag_of_words(bag_of_words* bag, char* s) {
 }
 
 
-void print_word(word_descriptor word) {
+void print_word_1(word_descriptor word) {
     while (word.begin != word.end) {
         printf("%c", *word.begin);
         word.begin++;
     }
-
-    printf("\n");
+    printf(" ");
 }
 
 
-void print_reverse_ordered(bag_of_words* bag, char* s) {
-    get_bag_of_words(bag, s);
+void print_reverse_ordered(char* s) {
+    get_bag_of_words(&_bag, s);
 
-    for (int i = bag->size - 1; i >= 0; i--)
-        print_word(bag->words[i]);
+    if (_bag.size >= 1)
+        for (int i = (int) _bag.size - 1; i >= 0; i--)
+            print_word_1(_bag.words[i]);
+
+    printf("\n");
+
+    free_bug(&_bag);
+}
+
+
+void test_7_empty() {
+    char s[] = "";
+    print_reverse_ordered(s);
+}
+
+
+void test_7_one_word() {
+    char s[] = "word";
+    print_reverse_ordered(s);
+}
+
+
+void test_7_only_letters() {
+    char s[] = "w o r";
+    print_reverse_ordered(s);
+}
+
+
+void test_7_more_word() {
+    char s[] = "i love python";
+    print_reverse_ordered(s);
+}
+
+
+void test_7_print_reverse_ordered() {
+    test_7_empty();
+    test_7_one_word();
+    test_7_only_letters();
+    test_7_more_word();
 }
 
 

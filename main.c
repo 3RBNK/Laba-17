@@ -8,6 +8,7 @@
 #include "string/task/replace_digit_to_space.h"
 #include "string/task/replace_word_to_word.h"
 #include "string/task/lexicographical_order.h"
+#include "string/task/print_revers_ordered.h"
 
 
 int main() {
@@ -17,6 +18,7 @@ int main() {
     test_4_replace_digit_to_space();
     test_5_replace_word_to_word();
     test_6_lexicographical_order();
+//    test_7_print_reverse_ordered();
 
     return 0;
 }

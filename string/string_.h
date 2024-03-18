@@ -32,6 +32,7 @@ typedef struct bag_of_words {
 extern bag_of_words _bag;
 extern bag_of_words _bag2;
 
+
 size_t strlen_(const char* begin);
 
 
@@ -75,6 +76,9 @@ void print_word(word_descriptor word);
 
 
 void free_string(char* string);
+
+
+void free_bug(bag_of_words* bag);
 
 
 void assert_string(const char* expected, char* got,

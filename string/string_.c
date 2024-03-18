@@ -3,10 +3,14 @@
 //
 
 #include <ctype.h>
+#include <malloc.h>
 
 #include "string_.h"
 
 char _string_buffer[MAX_STRING_SIZE + 1];
+
+bag_of_words _bag = {.words = NULL, .size = 0};
+bag_of_words _bag2 = {.words = NULL, .size = 0};
 
 size_t strlen_(const char* begin) {
     char* end = begin;
@@ -152,6 +156,16 @@ void free_string(char* string) {
         *ptr = '\0';
         ptr++;
     }
+}
+
+
+void free_bug(bag_of_words* bag) {
+    for (size_t i = 0; i < bag->size; i++) {
+        bag->words[i].begin = NULL;
+        bag->words[i].end = NULL;
+    }
+
+    bag->size = 0;
 }
 
 

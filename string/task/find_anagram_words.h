@@ -6,45 +6,16 @@
 #define CODE_FIND_ANAGRAM_WORDS_H
 
 #include <stdlib.h>
+#include <assert.h>
 #include "../string_.h"
 
 
-int compare(const void* s1, const void* s2) {
+int compare_letters(const void* s1, const void* s2) {
     return *(char *) s1 - *(char *) s2;
 }
 
 void sort_word_letters(word_descriptor* word) {
-    qsort(word->begin, word->end - word->begin, sizeof(char), compare);
-}
-
-
-bool my_get_word_for_anagram_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
-
-    word->end = find_space(word->begin) - 1;
-
-    return true;
-}
-
-
-bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
-    char* begin1 = word1.begin;
-    char* begin2 = word2.begin;
-
-    while (begin1 < word1.end && begin2 < word2.end) {
-        if (*begin1 != *begin2)
-            return false;
-
-        begin1++;
-        begin2++;
-    }
-
-    if (word1.end - begin1 > 0 || word2.end - begin2 > 0)
-        return false;
-
-    return true;
+    qsort(word->begin, word->end - word->begin, sizeof(char), compare_letters);
 }
 
 
@@ -53,24 +24,60 @@ bool are_identical_words_in_string(char* s) {
 
     copy(s, s + strlen_(s), _string_buffer);
 
-    bag_of_words words = {.size = 0};
-    while (my_get_word_for_anagram_word(begin_buff, &words.words[words.size])) {
-        begin_buff = words.words[words.size].end + 2;
-        words.size++;
+    while (get_word_without_space(begin_buff, &_bag.words[_bag.size])) {
+        begin_buff = _bag.words[_bag.size].end + 2;
+        _bag.size++;
     }
 
-    if (words.size <= 1)
+    free_string(_string_buffer);
+
+    if (_bag.size <= 1)
         return false;
 
-    for (size_t i = 0; i < words.size; i++)
-        sort_word_letters(&words.words[i]);
+    for (size_t i = 0; i < _bag.size; i++)
+        sort_word_letters(&_bag.words[i]);
 
-    for (size_t i = 0; i < words.size; i++)
-        for (size_t j = i + 1; j < words.size; j++)
-            if (is_word_equal(words.words[i], words.words[j]))
+    for (size_t i = 0; i < _bag.size; i++)
+        for (size_t j = i + 1; j < _bag.size; j++)
+            if (is_word_equal(_bag.words[i], _bag.words[j])) {
+                free_bag(&_bag);
                 return true;
+            }
 
+    free_bag(&_bag);
     return false;
+}
+
+
+void test_14_empty() {
+    char s[] = "";
+    assert(!are_identical_words_in_string(s));
+}
+
+
+void test_14_one_word() {
+    char s[] = "word";
+    assert(!are_identical_words_in_string(s));
+}
+
+
+void test_14_anagram_not_in_string() {
+    char s[] = "duplicate not in string";
+    assert(!are_identical_words_in_string(s));
+}
+
+
+void test_14_anagram_in_string() {
+    char s[] = "string in string";
+    assert(are_identical_words_in_string(s));
+}
+
+
+void test_14_find_anagram_words() {
+    test_14_empty();
+    test_14_one_word();
+    test_14_anagram_not_in_string();
+    test_14_anagram_in_string();
 }
 
 

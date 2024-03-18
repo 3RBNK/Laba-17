@@ -9,18 +9,7 @@
 #include <assert.h>
 
 
-bool my_get_word_for_duplicate_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
-
-    word->end = find_space(word->begin) - 1;
-
-    return true;
-}
-
-
-bool are_identical_words_in_string(char* s) {
+bool are_equal_words_in_string(char* s) {
     char* begin_buff = _string_buffer;
 
     copy(s, s + strlen_(s), _string_buffer);
@@ -49,25 +38,25 @@ bool are_identical_words_in_string(char* s) {
 
 void test_13_empty() {
     char s[] = "";
-    assert(!are_identical_words_in_string(s));
+    assert(!are_equal_words_in_string(s));
 }
 
 
 void test_13_one_word() {
     char s[] = "word";
-    assert(!are_identical_words_in_string(s));
+    assert(!are_equal_words_in_string(s));
 }
 
 
 void test_13_duplicate_not_in_string() {
     char s[] = "duplicate not in string";
-    assert(!are_identical_words_in_string(s));
+    assert(!are_equal_words_in_string(s));
 }
 
 
 void test_13_duplicate_in_string() {
     char s[] = "string in string";
-    assert(are_identical_words_in_string(s));
+    assert(are_equal_words_in_string(s));
 }
 
 

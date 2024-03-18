@@ -15,7 +15,7 @@
 #include "string/task/get_word_before_first_word_with_a.h"
 #include "string/task/find_last_common_word.h"
 #include "string/task/find_duplicate_words.h"
-
+#include "string/task/find_anagram_words.h"
 
 
 int main() {
@@ -32,6 +32,7 @@ int main() {
     test_11_all_test_get_before_first_word_with_a();
     test_12_find_last_common_word();
     test_13_find_duplicate_words();
+    test_14_find_anagram_words();
 
 
     return 0;

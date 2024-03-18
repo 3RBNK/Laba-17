@@ -7,6 +7,7 @@
 #include "string/task/reverse_word.h"
 #include "string/task/replace_digit_to_space.h"
 #include "string/task/replace_word_to_word.h"
+#include "string/task/lexicographical_order.h"
 
 
 int main() {
@@ -15,6 +16,7 @@ int main() {
     test_3_reverse_word();
     test_4_replace_digit_to_space();
     test_5_replace_word_to_word();
+    test_6_lexicographical_order();
 
     return 0;
 }

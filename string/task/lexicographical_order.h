@@ -7,11 +7,12 @@
 
 
 #include "../string_.h"
+#include <assert.h>
 
 
 int are_words_equal(word_descriptor w1, word_descriptor w2) {
     while (*w1.begin && (*w1.begin == *w2.begin)) {
-        w1.begin ++;
+        w1.begin++;
         w2.begin++;
     }
 
@@ -38,6 +39,59 @@ bool is_lexicographical_order(char* s) {
     }
 
     return true;
+}
+
+
+void test_6_empty() {
+    char s[] = "";
+    assert(is_lexicographical_order(s));
+}
+
+
+void test_6_one_letters() {
+    char s[] = "a";
+    assert(is_lexicographical_order(s));
+}
+
+
+void test_6_only_letters_ordered() {
+    char s[] = "a b c d";
+    assert(is_lexicographical_order(s));
+}
+
+
+void test_6_only_letters_unordered() {
+    char s[] = "a n d";
+    assert(!is_lexicographical_order(s));
+}
+
+
+void test_6_one_word_ordered() {
+    char s[] = "absolute";
+    assert(is_lexicographical_order(s));
+}
+
+
+void test_6_word_ordered() {
+    char s[] = "abs abs absolute zero";
+    assert(is_lexicographical_order(s));
+}
+
+
+void test_6_word_unordered() {
+    char s[] = "zero start";
+    assert(!is_lexicographical_order(s));
+}
+
+
+void test_6_lexicographical_order() {
+    test_6_empty();
+    test_6_one_letters();
+    test_6_only_letters_ordered();
+    test_6_only_letters_unordered();
+    test_6_one_word_ordered();
+    test_6_word_ordered();
+    test_6_word_unordered();
 }
 
 

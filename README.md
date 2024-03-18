@@ -8,7 +8,7 @@
 8 - counter_palindrome_words 
 9 - rearranging_words 
 10 - change_word_ordered 
-11 - print_word_before_first_word_with_a
+11 - get_word_before_first_word_with_a
 12 - find_last_common_word
 13 -  find_duplicate_words
 14 - find_anagram_words

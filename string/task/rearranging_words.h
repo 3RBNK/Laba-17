@@ -47,4 +47,86 @@ void merge_words(char* s1, char* s2, char* result) {
 }
 
 
+void test_9_empty() {
+    char result[100] = "";
+
+    char s1[] = "";
+    char s2[] = "";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("", result);
+}
+
+
+void test_9_one_string_empty_1() {
+    char result[100] = "";
+
+    char s1[] = "";
+    char s2[] = "word";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("word ", result);
+}
+
+
+void test_9_one_string_empty_2() {
+    char result[100] = "";
+
+    char s1[] = "word";
+    char s2[] = "";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("word ", result);
+}
+
+
+void test_9_different_string() {
+    char result[100] = "";
+
+    char s1[] = "word";
+    char s2[] = "vector";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("word vector ", result);
+}
+
+
+void test_9_different_amount_word_1() {
+    char result[100] = "";
+
+    char s1[] = "word";
+    char s2[] = "vector love";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("word vector love ", result);
+}
+
+
+void test_9_different_amount_word_2() {
+    char result[100] = "";
+
+    char s1[] = "word vector";
+    char s2[] = "love";
+
+    merge_words(s1, s2, result);
+
+    ASSERT_STRING("word love vector ", result);
+}
+
+
+void test_9_rearranging_words() {
+    test_9_empty();
+    test_9_one_string_empty_1();
+    test_9_one_string_empty_2();
+    test_9_different_string();
+    test_9_different_amount_word_1();
+    test_9_different_amount_word_2();
+}
+
+
 #endif //CODE_REARRANGING_WORDS_H

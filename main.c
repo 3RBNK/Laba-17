@@ -10,6 +10,7 @@
 #include "string/task/lexicographical_order.h"
 #include "string/task/print_revers_ordered.h"
 #include "string/task/counter_palindrome_word.h"
+#include "string/task/rearranging_words.h"
 
 
 int main() {
@@ -21,6 +22,7 @@ int main() {
     test_6_lexicographical_order();
 //    test_7_print_reverse_ordered();
     test_8_counter_palindrome_word();
+    test_9_rearranging_words();
 
     return 0;
 }

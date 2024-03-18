@@ -67,10 +67,12 @@ void test_7_more_word() {
 
 
 void test_7_print_reverse_ordered() {
+    printf("Test 7: \n");
     test_7_empty();
     test_7_one_word();
     test_7_only_letters();
     test_7_more_word();
+    printf("\n");
 }
 
 

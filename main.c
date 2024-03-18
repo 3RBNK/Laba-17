@@ -11,7 +11,7 @@
 #include "string/task/print_revers_ordered.h"
 #include "string/task/counter_palindrome_word.h"
 #include "string/task/rearranging_words.h"
-
+#include "string/task/change_word_order.h"
 
 int main() {
     test_1_remove_non_letters();
@@ -19,10 +19,11 @@ int main() {
     test_3_reverse_word();
     test_4_replace_digit_to_space();
     test_5_replace_word_to_word();
-    test_6_lexicographical_order();
-//    test_7_print_reverse_ordered();
-    test_8_counter_palindrome_word();
+    test_6_lexicographical_order(); // bool, поэтому не имеет вывода
+//    test_7_print_reverse_ordered(); // выводит строку
+    test_8_counter_palindrome_word(); // bool, поэтому не имеет вывода
     test_9_rearranging_words();
+    test_10_change_word_order();
 
     return 0;
 }

@@ -24,6 +24,7 @@ add_library(str string/string_.h string/string_.c
         string/task/get_word_except_last.h
         string/task/find_preceding-word.h
         string/task/remove_palindrome_word.h
+        string/task/find_anagram_words.h
 )
 
 

@@ -35,4 +35,5 @@ void balance_string(char* s1, size_t n1, char* s2, size_t n2) {
         complement_string(s2, s1, n1 - n2);
 }
 
+
 #endif //CODE_BALANCE_STRING_H

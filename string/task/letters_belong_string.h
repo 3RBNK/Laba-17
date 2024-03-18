@@ -38,4 +38,5 @@ bool letters_belong_string(char* string, char* word) {
 
 }
 
+
 #endif //CODE_LETTERS_BELONG_STRING_H

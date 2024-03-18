@@ -8,7 +8,6 @@
 #include "remove_non_letters.h"
 #include "../string_.h"
 
-
 #define ASCII_SHIFT_FOR_DIGIT 48
 
 

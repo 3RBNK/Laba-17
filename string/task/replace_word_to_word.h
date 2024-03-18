@@ -57,4 +57,5 @@ void replace(char* source, char* w1, char* w2) {
     *rec_ptr = '\0';
 }
 
+
 #endif //CODE_REPLACE_WORD_TO_WORD_H

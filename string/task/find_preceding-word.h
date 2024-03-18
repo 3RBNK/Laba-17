@@ -74,4 +74,5 @@ word_descriptor find_preceding_word(char* s1, char* s2) {
     return preceding_w;
 }
 
+
 #endif //CODE_FIND_PRECEDING_WORD_H

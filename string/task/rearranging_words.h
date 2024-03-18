@@ -7,6 +7,7 @@
 
 #include "../string_.h"
 
+
 void append_word(char* result, word_descriptor* word) {
     char* ptr = result;
     while (*ptr != '\0') {

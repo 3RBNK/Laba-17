@@ -64,4 +64,5 @@ word_descriptor find_last_common_word(char* s1, char* s2) {
     return no_common_word;
 }
 
+
 #endif //CODE_FIND_LAST_COMMON_WORD_H

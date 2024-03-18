@@ -42,4 +42,5 @@ void remove_palindrome_word(char* s) {
     *rec_ptr = '\0';
 }
 
+
 #endif //CODE_REMOVE_PALINDROME_WORD_H

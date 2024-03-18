@@ -62,4 +62,5 @@ void get_word_except_last(char* source, char* dest) {
     *rec_ptr = '\0';
 }
 
+
 #endif //CODE_GET_WORD_EXCEPT_LAST_H

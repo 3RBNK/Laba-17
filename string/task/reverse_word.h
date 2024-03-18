@@ -8,9 +8,6 @@
 #include "../string_.h"
 
 
-
-
-
 void digit_to_start(word_descriptor word) {
     char* end_string_buffer = copy(word.begin, word.end, _string_buffer);
 

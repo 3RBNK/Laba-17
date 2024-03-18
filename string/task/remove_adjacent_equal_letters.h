@@ -24,4 +24,5 @@ void remove_adjacent_equal_letters(char* s) {
     *i_write = '\0';
 }
 
+
 #endif //CODE_REMOVE_ADJACENT_EQUAL_LETTERS_H

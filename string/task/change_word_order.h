@@ -9,15 +9,6 @@
 #include "../string_.h"
 
 
-void print_word(word_descriptor word) {
-    while (word.begin != word.end) {
-        printf("%c", *word.begin);
-        word.begin++;
-    }
-    printf("\n");
-}
-
-
 void change_word_order(char *s) {
     printf("%s\n", s);
     printf("%p\n", s);

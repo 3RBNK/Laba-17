@@ -58,6 +58,4 @@ int counter_palindrome_words(char* s) {
 }
 
 
-
-
 #endif //CODE_COUNTER_PALINDROME_WORD_H

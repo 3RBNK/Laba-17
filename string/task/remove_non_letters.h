@@ -16,4 +16,5 @@ void remove_non_letters(char* s) {
     *destination = '\0';
 }
 
+
 #endif //CODE_REMOVE_NON_LETTERS_H

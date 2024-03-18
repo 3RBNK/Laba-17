@@ -28,7 +28,6 @@ bool is_lexicographical_order(char* s) {
 
     begin_search = word1.end;
 
-
     while (get_word(begin_search, &word2)) {
         if (are_words_equal(word1, word2) <= 0)
             word1 = word2;

@@ -55,4 +55,5 @@ int print_word_before_first_word_a(char* s) {
     return 2;
 }
 
+
 #endif //CODE_PRINT_WORD_BEFORE_FIRST_WORD_WITH_A_H

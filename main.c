@@ -18,6 +18,7 @@
 #include "string/task/find_anagram_words.h"
 #include "string/task/get_word_except_last.h"
 #include "string/task/find_preceding-word.h"
+#include "string/task/remove_palindrome_word.h"
 
 
 int main() {
@@ -37,6 +38,7 @@ int main() {
     test_14_find_anagram_words();
     test_15_get_word_except_last();
     test_16_find_preceding_word();
+    test_17_remove_palindrome_word();
 
 
     return 0;

@@ -227,3 +227,19 @@ void word_descriptor_to_string(word_descriptor word, char* dest) {
 
     *dest = '\0';
 }
+
+
+bool is_palindrome_word(word_descriptor* word) {
+    char* start = word->begin;
+    char* end = word->end - 1;
+
+    while (start < end) {
+        if (*start != *end)
+            return false;
+
+        start++;
+        end--;
+    }
+
+    return true;
+}

@@ -97,4 +97,7 @@ bool is_word_equal(word_descriptor word1, word_descriptor word2);
 void word_descriptor_to_string(word_descriptor word, char* dest);
 
 
+bool is_palindrome_word(word_descriptor* word);
+
+
 #endif //CODE_STRING__H

@@ -38,7 +38,7 @@ void print_reverse_ordered(char* s) {
 
     printf("\n");
 
-    free_bug(&_bag);
+    free_bag(&_bag);
 }
 
 

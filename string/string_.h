@@ -71,6 +71,9 @@ char* get_end_of_string(char* s);
 bool get_word(char* begin_search, word_descriptor* word);
 
 
+bool get_word_without_space(char* begin_search, word_descriptor* word);
+
+
 bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
 
@@ -80,7 +83,7 @@ void print_word(word_descriptor word);
 void free_string(char* string);
 
 
-void free_bug(bag_of_words* bag);
+void free_bag(bag_of_words* bag);
 
 
 void assert_string(const char* expected, char* got,

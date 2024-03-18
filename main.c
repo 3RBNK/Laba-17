@@ -13,6 +13,8 @@
 #include "string/task/rearranging_words.h"
 #include "string/task/change_word_order.h"
 #include "string/task/get_word_before_first_word_with_a.h"
+#include "string/task/find_last_common_word.h"
+
 
 
 int main() {
@@ -27,6 +29,8 @@ int main() {
     test_9_rearranging_words();
     test_10_change_word_order();
     test_11_all_test_get_before_first_word_with_a();
+    test_12_find_last_common_word();
+
 
     return 0;
 }

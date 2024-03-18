@@ -8,17 +8,6 @@
 #include "../string_.h"
 
 
-bool my_get_word_for_last_common_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
-
-    word->end = find_space(word->begin) - 1;
-
-    return true;
-}
-
-
 bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
     char* begin1 = word1.begin;
     char* begin2 = word2.begin;
@@ -39,29 +28,101 @@ bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
 
 
 word_descriptor find_last_common_word(char* s1, char* s2) {
-    bag_of_words words1 = {.size = 0};
-    bag_of_words words2 = {.size = 0};
-
     char* begin_search_1 = s1;
     char* begin_search_2 = s2;
 
-    while (my_get_word_for_last_common_word(begin_search_1, &words1.words[words1.size])) {
-        begin_search_1 = words1.words[words1.size].end + 1;
-        words1.size++;
+    while (get_word_without_space(begin_search_1, &_bag.words[_bag.size])) {
+        begin_search_1 = _bag.words[_bag.size].end + 1;
+        _bag.size++;
     }
 
-    while (my_get_word_for_last_common_word(begin_search_2, &words2.words[words2.size])) {
-        begin_search_2 = words2.words[words2.size].end + 1;
-        words2.size++;
+    while (get_word_without_space(begin_search_2, &_bag2.words[_bag2.size])) {
+        begin_search_2 = _bag2.words[_bag2.size].end + 1;
+        _bag2.size++;
     }
 
-    word_descriptor no_common_word = {.begin = NULL, .end = NULL};
-    for (int i = (int) words1.size - 1; i >= 0; i--)
-        for (int j = 0; j < words2.size; j++)
-            if (is_word_equal(words1.words[i], words2.words[j]))
-                return words1.words[i];
+    word_descriptor word = {.begin = NULL, .end = NULL};
+    for (int i = (int) _bag.size - 1; i >= 0; i--)
+        for (int j = 0; j < _bag2.size; j++)
+            if (is_word_equal(_bag.words[i], _bag2.words[j])) {
+                word = _bag.words[i];
 
-    return no_common_word;
+                free_bag(&_bag);
+                free_bag(&_bag2);
+
+                return word;
+            }
+
+    return word;
+}
+
+
+void word_descriptor_to_string(word_descriptor word, char* dest) {
+    while (word.begin <= word.end) {
+        *dest = *word.begin;
+        word.begin++;
+        dest++;
+    }
+
+    *dest = '\0';
+}
+
+
+void test_12_word_at_end() {
+    char s1[] = "i love python";
+    char s2[] = "python is cool";
+
+    char dest[MAX_WORD_SIZE] = "";
+    word_descriptor word = find_last_common_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("python", dest);
+}
+
+
+void test_12_no_common_word() {
+    char s1[] = "i love";
+    char s2[] = "python is cool";
+
+    char dest[MAX_WORD_SIZE] = "";
+    word_descriptor word = find_last_common_word(s1, s2);
+
+    assert(word.begin == NULL && word.end == NULL);
+}
+
+
+void test_12_word_at_start() {
+    char s1[] = "python my love";
+    char s2[] = "python is cool";
+
+    char dest[MAX_WORD_SIZE] = "";
+    word_descriptor word = find_last_common_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("python", dest);
+}
+
+
+void test_12_single_word_strings() {
+    char s1[] = "my";
+    char s2[] = "my";
+
+    char dest[MAX_WORD_SIZE] = "";
+    word_descriptor word = find_last_common_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("my", dest);
+}
+
+
+void test_12_find_last_common_word() {
+    test_12_word_at_end();
+    test_12_word_at_start();
+    test_12_no_common_word();
+    test_12_single_word_strings();
 }
 
 

@@ -128,6 +128,17 @@ bool get_word(char* begin_search, word_descriptor* word) {
 }
 
 
+bool get_word_without_space(char* begin_search, word_descriptor* word) {
+    word->begin = find_non_space(begin_search);
+    if (*word->begin == '\0')
+        return false;
+
+    word->end = find_space(word->begin) - 1;
+
+    return true;
+}
+
+
 bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word) {
     if (word->begin == r_end)
         return false;
@@ -159,7 +170,7 @@ void free_string(char* string) {
 }
 
 
-void free_bug(bag_of_words* bag) {
+void free_bag(bag_of_words* bag) {
     for (size_t i = 0; i < bag->size; i++) {
         bag->words[i].begin = NULL;
         bag->words[i].end = NULL;

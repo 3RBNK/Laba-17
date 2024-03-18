@@ -5,13 +5,13 @@
 #ifndef CODE_LETTERS_BELONG_STRING_H
 #define CODE_LETTERS_BELONG_STRING_H
 
+#include <assert.h>
+#include "../string_.h"
+
 #define LETTERS_SHIFT 97
 
 
-#include "../string_.h"
-
-
-bool letters_belong_string(char* string, char* word) {
+bool letters_belong_string(char* string, word_descriptor word) {
     bool include[26] = {0};
 
     char* start = string;
@@ -24,18 +24,68 @@ bool letters_belong_string(char* string, char* word) {
         start++;
     }
 
-    char* start_word = word;
-    char* end_word = get_end_of_string(word);
-
-    while (start_word != end_word) {
-        if (!include[*start_word - LETTERS_SHIFT])
+    while (word.begin != word.end) {
+        if (!include[*word.begin - LETTERS_SHIFT])
             return false;
 
-        start_word++;
+        word.begin++;
     }
 
     return true;
+}
 
+
+void test_19_empty() {
+    char string[] = "";
+    word_descriptor word;
+    get_word("", &word);
+
+    assert(!letters_belong_string(string, word));
+}
+
+
+void test_19_empty_word() {
+    char string[] = "word";
+    word_descriptor word;
+    get_word("", &word);
+
+    assert(!letters_belong_string(string, word));
+}
+
+
+void test_19_empty_string() {
+    char string[] = "";
+    word_descriptor word;
+    get_word("word", &word);
+
+    assert(!letters_belong_string(string, word));
+}
+
+
+void test_19_letters_not_in_string() {
+    char string[] = "abc";
+    word_descriptor word;
+    get_word("word", &word);
+
+    assert(!letters_belong_string(string, word));
+}
+
+
+void test_19_letters_in_string() {
+    char string[] = "world";
+    word_descriptor word;
+    get_word("word", &word);
+
+    assert(letters_belong_string(string, word));
+}
+
+
+void test_19_letters_belong_string() {
+    test_19_empty();
+    test_19_empty_word();
+    test_19_empty_string();
+    test_19_letters_not_in_string();
+    test_19_letters_in_string();
 }
 
 

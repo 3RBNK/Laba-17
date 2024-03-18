@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <malloc.h>
-
-#include "string/string_.h"
 #include "string/task/remove_non_letters.h"
 #include "string/task/remove_adjacent_equal_letters.h"
 #include "string/task/reverse_word.h"
@@ -19,6 +15,8 @@
 #include "string/task/get_word_except_last.h"
 #include "string/task/find_preceding-word.h"
 #include "string/task/remove_palindrome_word.h"
+#include "string/task/balance_string.h"
+#include "string/task/letters_belong_string.h"
 
 
 int main() {
@@ -39,6 +37,8 @@ int main() {
     test_15_get_word_except_last();
     test_16_find_preceding_word();
     test_17_remove_palindrome_word();
+    test_18_balance_string();
+    test_19_letters_belong_string();
 
 
     return 0;

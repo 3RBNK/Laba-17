@@ -12,6 +12,8 @@
 #include "string/task/counter_palindrome_word.h"
 #include "string/task/rearranging_words.h"
 #include "string/task/change_word_order.h"
+#include "string/task/get_word_before_first_word_with_a.h"
+
 
 int main() {
     test_1_remove_non_letters();
@@ -24,6 +26,7 @@ int main() {
     test_8_counter_palindrome_word(); // bool, поэтому не имеет вывода
     test_9_rearranging_words();
     test_10_change_word_order();
+    test_11_all_test_get_before_first_word_with_a();
 
     return 0;
 }

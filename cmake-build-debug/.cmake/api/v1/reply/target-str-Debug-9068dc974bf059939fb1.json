@@ -173,7 +173,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "string/task/print_word_before_first_word_with_a.h",
+			"path" : "string/task/get_word_before_first_word_with_a.h",
 			"sourceGroupIndex" : 0
 		},
 		{

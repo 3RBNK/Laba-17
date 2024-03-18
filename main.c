@@ -2,15 +2,11 @@
 #include <malloc.h>
 
 #include "string/string_.h"
-#include "string/task/change_word_order.h"
+#include "string/task/remove_non_letters.h"
 
 
 int main() {
-    char s[50] = "word to vector";
-
-    change_word_order(s);
-
-    puts(s);
+    test_1_remove_non_letters();
 
     return 0;
 }

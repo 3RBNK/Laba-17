@@ -11,7 +11,7 @@
 #include <ctype.h>
 
 
-#define MAX_WORD_SIZE 20
+#define ASSERT_STRING(expected, got) assert_string(expected, got, __FILE__, __FUNCTION__, __LINE__)
 #define MAX_N_WORDS_IN_STRING 100
 #define MAX_STRING_SIZE 200
 
@@ -72,5 +72,10 @@ bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 
 
 void print_word(word_descriptor word);
+
+
+void assert_string(const char* expected, char* got,
+                   char const* file_name, char const* func_name,
+                   int line);
 
 #endif //CODE_STRING__H

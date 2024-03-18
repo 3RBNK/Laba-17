@@ -146,6 +146,15 @@ void print_word(word_descriptor word) {
 }
 
 
+void free_string(char* string) {
+    char* ptr = string;
+    while (*ptr) {
+        *ptr = '\0';
+        ptr++;
+    }
+}
+
+
 void assert_string(const char* expected, char* got,
                    char const* file_name, char const* func_name,
                    int line) {

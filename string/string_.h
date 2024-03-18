@@ -74,6 +74,9 @@ bool get_word_reverse(char* r_begin, char* r_end, word_descriptor* word);
 void print_word(word_descriptor word);
 
 
+void free_string(char* string);
+
+
 void assert_string(const char* expected, char* got,
                    char const* file_name, char const* func_name,
                    int line);

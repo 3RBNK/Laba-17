@@ -33,6 +33,8 @@ void replace_digit_to_space(char* s) {
     }
 
     *rec_ptr = '\0';
+
+    free_string(_string_buffer);
 }
 
 

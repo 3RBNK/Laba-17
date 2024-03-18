@@ -55,7 +55,72 @@ void replace(char* source, char* w1, char* w2) {
     }
 
     *rec_ptr = '\0';
+
+    free_string(_string_buffer);
 }
 
+
+void test_5_empty() {
+    char source[] = "";
+    char w1[] = "word";
+    char w2[] = "ground";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING("", source);
+}
+
+
+void test_5_word_not_in_string() {
+    char source[] = "hello world";
+    char w1[] = "dad";
+    char w2[] = "bread";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING("hello world", source);
+}
+
+
+void test_5_word_equal_length() {
+    char source[] = "hello world";
+    char w1[] = "world";
+    char w2[] = "bread";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING("hello bread", source);
+}
+
+
+void test_5_word_different_length() {
+    char source[] = "hello world";
+    char w1[] = "world";
+    char w2[] = "word";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING("hello word", source);
+}
+
+
+void test_5_word_different_length_2() {
+    char source[] = "hello world";
+    char w1[] = "world";
+    char w2[] = "different";
+
+    replace(source, w1, w2);
+
+    ASSERT_STRING("hello different", source);
+}
+
+
+void test_5_replace_word_to_word() {
+    test_5_empty();
+    test_5_word_not_in_string();
+    test_5_word_equal_length();
+    test_5_word_different_length();
+    test_5_word_different_length_2();
+}
 
 #endif //CODE_REPLACE_WORD_TO_WORD_H

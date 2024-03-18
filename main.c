@@ -6,6 +6,7 @@
 #include "string/task/remove_adjacent_equal_letters.h"
 #include "string/task/reverse_word.h"
 #include "string/task/replace_digit_to_space.h"
+#include "string/task/replace_word_to_word.h"
 
 
 int main() {
@@ -13,7 +14,7 @@ int main() {
     test_2_remove_adjacent_equal_letters();
     test_3_reverse_word();
     test_4_replace_digit_to_space();
-
+    test_5_replace_word_to_word();
 
     return 0;
 }

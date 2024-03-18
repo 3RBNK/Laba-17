@@ -94,4 +94,7 @@ void assert_string(const char* expected, char* got,
 bool is_word_equal(word_descriptor word1, word_descriptor word2);
 
 
+void word_descriptor_to_string(word_descriptor word, char* dest);
+
+
 #endif //CODE_STRING__H

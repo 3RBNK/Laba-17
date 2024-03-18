@@ -17,6 +17,7 @@
 #include "string/task/find_duplicate_words.h"
 #include "string/task/find_anagram_words.h"
 #include "string/task/get_word_except_last.h"
+#include "string/task/find_preceding-word.h"
 
 
 int main() {
@@ -35,6 +36,7 @@ int main() {
     test_13_find_duplicate_words();
     test_14_find_anagram_words();
     test_15_get_word_except_last();
+    test_16_find_preceding_word();
 
 
     return 0;

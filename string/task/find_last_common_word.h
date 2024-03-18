@@ -38,17 +38,6 @@ word_descriptor find_last_common_word(char* s1, char* s2) {
 }
 
 
-void word_descriptor_to_string(word_descriptor word, char* dest) {
-    while (word.begin <= word.end) {
-        *dest = *word.begin;
-        word.begin++;
-        dest++;
-    }
-
-    *dest = '\0';
-}
-
-
 void test_12_word_at_end() {
     char s1[] = "i love python";
     char s2[] = "python is cool";

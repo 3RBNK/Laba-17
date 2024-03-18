@@ -8,70 +8,117 @@
 #include "../string_.h"
 
 
-bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
-    char* begin1 = word1.begin;
-    char* begin2 = word2.begin;
-
-    while (begin1 < word1.end && begin2 < word2.end) {
-        if (*begin1 != *begin2)
-            return false;
-
-        begin1++;
-        begin2++;
-    }
-
-    if (word1.end - begin1 > 0 || word2.end - begin2 > 0)
-        return false;
-
-    return true;
-}
-
-
-bool my_get_word_for_preceding_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
-
-    word->end = find_space(word->begin) - 1;
-
-    return true;
-}
-
-
 word_descriptor find_preceding_word(char* s1, char* s2) {
-    bag_of_words words1 = {.size = 0};
-    bag_of_words words2 = {.size = 0};
-
     char* begin_search_1 = s1;
     char* begin_search_2 = s2;
 
-    while (my_get_word_for_preceding_word(begin_search_1, &words1.words[words1.size])) {
-        begin_search_1 = words1.words[words1.size].end + 1;
-        words1.size++;
+    while (get_word_without_space(begin_search_1, &_bag.words[_bag.size])) {
+        begin_search_1 = _bag.words[_bag.size].end + 1;
+        _bag.size++;
     }
 
-    while (my_get_word_for_preceding_word(begin_search_2, &words2.words[words2.size])) {
-        begin_search_2 = words2.words[words2.size].end + 1;
-        words2.size++;
+    while (get_word_without_space(begin_search_2, &_bag2.words[_bag2.size])) {
+        begin_search_2 = _bag2.words[_bag2.size].end + 1;
+        _bag2.size++;
     }
 
     bool stop = false;
     word_descriptor w;
     word_descriptor preceding_w = {.begin = NULL, .end = NULL};
-    for (size_t i = 1; i < words1.size; i++) {
-        w = words1.words[i];
-        preceding_w = words1.words[i - 1];
-        for (size_t j = 0; j < words2.size; j++)
-            if (is_word_equal(w, words2.words[j])) {
+
+    for (size_t i = 1; i < _bag.size; i++) {
+        w = _bag.words[i];
+        for (size_t j = 0; j < _bag2.size; j++)
+            if (is_word_equal(w, _bag2.words[j])) {
                 stop = true;
                 break;
             }
 
-        if (stop)
+        if (stop) {
+            preceding_w = _bag.words[i - 1];
             break;
+        }
+
     }
 
+    free_bag(&_bag);
+    free_bag(&_bag2);
+
     return preceding_w;
+}
+
+
+void test_16_empty() {
+    char s1[] = "";
+    char s2[] = "";
+
+    char dest[40] = "";
+    word_descriptor word = find_preceding_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_16_first_empty() {
+    char s1[] = "";
+    char s2[] = "word";
+
+    char dest[40] = "";
+    word_descriptor word = find_preceding_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_16_second_empty() {
+    char s1[] = "i love";
+    char s2[] = "";
+
+    char dest[40] = "";
+    word_descriptor word = find_preceding_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_16_not_in_string() {
+    char s1[] = "i love python";
+    char s2[] = "hate c";
+
+    char dest[40] = "";
+    word_descriptor word = find_preceding_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_16_first_in_string() {
+    char s1[] = "i love python";
+    char s2[] = "is love butterfly";
+
+    char dest[40] = "";
+    word_descriptor word = find_preceding_word(s1, s2);
+
+    word_descriptor_to_string(word, dest);
+
+    ASSERT_STRING("i", dest);
+}
+
+
+void test_16_find_preceding_word() {
+    test_16_empty();
+    test_16_first_empty();
+    test_16_second_empty();
+    test_16_not_in_string();
+    test_16_first_in_string();
 }
 
 

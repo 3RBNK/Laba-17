@@ -54,4 +54,40 @@ void reverse_word_in_string(char* s) {
 }
 
 
+void test_3_empty() {
+    char s[] = "";
+    reverse_word_in_string(s);
+    ASSERT_STRING("", s);
+}
+
+
+void test_3_one_letters() {
+    char s[] = "a";
+    reverse_word_in_string(s);
+    ASSERT_STRING("a", s);
+}
+
+
+void test_3_one_word() {
+    char s[] = "absolute";
+    reverse_word_in_string(s);
+    ASSERT_STRING("etulosba", s);
+}
+
+
+void test_3_two_word() {
+    char s[] = "absolute radar";
+    reverse_word_in_string(s);
+    ASSERT_STRING("etulosba radar", s);
+}
+
+
+void test_3_reverse_word() {
+    test_3_empty();
+    test_3_one_letters();
+    test_3_one_word();
+    test_3_two_word();
+}
+
+
 #endif //CODE_REVERSE_WORD_H

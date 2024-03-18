@@ -6,6 +6,8 @@
 #define CODE_REMOVE_ADJACENT_EQUAL_LETTERS_H
 
 #include <ctype.h>
+#include "../string_.h"
+
 
 void remove_adjacent_equal_letters(char* s) {
     char* i_write = s;
@@ -24,5 +26,39 @@ void remove_adjacent_equal_letters(char* s) {
     *i_write = '\0';
 }
 
+
+void test_empty() {
+    char s[] = "";
+    remove_adjacent_equal_letters(s);
+    ASSERT_STRING("", s);
+}
+
+
+void test_one_letters() {
+    char s[] = "a";
+    remove_adjacent_equal_letters(s);
+    ASSERT_STRING("a", s);
+}
+
+void test_one_letters_duplicate() {
+    char s[] = "aa";
+    remove_adjacent_equal_letters(s);
+    ASSERT_STRING("a", s);
+}
+
+
+void test_two_letters_duplicate() {
+    char s[] = "aaa bbb";
+    remove_adjacent_equal_letters(s);
+    ASSERT_STRING("a b", s);
+}
+
+
+void test_2_remove_adjacent_equal_letters() {
+    test_empty();
+    test_one_letters();
+    test_one_letters_duplicate();
+    test_two_letters_duplicate();
+}
 
 #endif //CODE_REMOVE_ADJACENT_EQUAL_LETTERS_H

@@ -8,58 +8,81 @@
 #include "../string_.h"
 
 
-bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
-    char* begin1 = word1.begin;
-    char* begin2 = word2.begin;
-
-    while (begin1 < word1.end && begin2 < word2.end) {
-        if (*begin1 != *begin2)
-            return false;
-
-        begin1++;
-        begin2++;
-    }
-
-    if (word1.end - begin1 > 0 || word2.end - begin2 > 0)
-        return false;
-
-    return true;
-}
-
-
-bool my_get_word_for_except_word(char* begin_search, word_descriptor* word) {
-    word->begin = find_non_space(begin_search);
-    if (*word->begin == '\0')
-        return false;
-
-    word->end = find_space(word->begin) - 1;
-
-    return true;
-}
-
-
 void get_word_except_last(char* source, char* dest) {
     char* begin_search = source;
 
-    bag_of_words words = {.size = 0};
-
-    while (my_get_word_for_except_word(begin_search, &words.words[words.size])) {
-        begin_search = words.words[words.size].end + 1;
-        words.size++;
+    while (get_word_without_space(begin_search, &_bag.words[_bag.size])) {
+        begin_search = _bag.words[_bag.size].end + 1;
+        _bag.size++;
     }
 
+    if (_bag.size == 0) {
+        free_bag(&_bag);
+        return;
+    }
 
-    word_descriptor last_word = words.words[words.size - 1];
+    word_descriptor last_word = _bag.words[_bag.size - 1];
     char* rec_ptr = dest;
 
-    for (size_t i = 0; i < words.size - 1; i++) {
-        if (!is_word_equal(words.words[i], last_word)) {
-            rec_ptr = copy(words.words[i].begin, words.words[i].end + 1, rec_ptr);
-            if (i != words.size - 2)
+    for (size_t i = 0; i < _bag.size - 1; i++) {
+        if (!is_word_equal(_bag.words[i], last_word)) {
+            rec_ptr = copy(_bag.words[i].begin, _bag.words[i].end + 1, rec_ptr);
+            if (i != _bag.size - 2)
                 *rec_ptr++ = ' ';
         }
     }
+
     *rec_ptr = '\0';
+
+    free_bag(&_bag);
+}
+
+
+void test_15_empty() {
+    char source[] = "";
+    char dest[40] = "";
+
+    get_word_except_last(source, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_15_one_word() {
+    char source[] = "word";
+    char dest[40] = "";
+
+    get_word_except_last(source, dest);
+
+    ASSERT_STRING("", dest);
+}
+
+
+void test_15_last_unique() {
+    char source[] = "word map";
+    char dest[40] = "";
+
+    get_word_except_last(source, dest);
+
+    ASSERT_STRING("word", dest);
+}
+
+
+void test_15_last_not_unique() {
+    char source[] = "word map is map";
+    char dest[40] = "";
+
+    get_word_except_last(source, dest);
+
+    ASSERT_STRING("word is", dest);
+}
+
+
+void test_15_get_word_except_last() {
+    test_15_empty();
+    test_15_one_word();
+    test_15_last_unique();
+    test_15_last_not_unique();
 }
 
 

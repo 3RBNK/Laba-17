@@ -8,25 +8,6 @@
 #include "../string_.h"
 
 
-bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
-    char* begin1 = word1.begin;
-    char* begin2 = word2.begin;
-
-    while (begin1 < word1.end && begin2 < word2.end) {
-        if (*begin1 != *begin2)
-            return false;
-
-        begin1++;
-        begin2++;
-    }
-
-    if (word1.end - begin1 > 0 || word2.end - begin2 > 0)
-        return false;
-
-    return true;
-}
-
-
 word_descriptor find_last_common_word(char* s1, char* s2) {
     char* begin_search_1 = s1;
     char* begin_search_2 = s2;

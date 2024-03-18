@@ -90,4 +90,8 @@ void assert_string(const char* expected, char* got,
                    char const* file_name, char const* func_name,
                    int line);
 
+
+bool is_word_equal(word_descriptor word1, word_descriptor word2);
+
+
 #endif //CODE_STRING__H

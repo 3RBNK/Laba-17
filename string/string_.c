@@ -7,10 +7,12 @@
 
 #include "string_.h"
 
+
 char _string_buffer[MAX_STRING_SIZE + 1];
 
 bag_of_words _bag = {.words = NULL, .size = 0};
 bag_of_words _bag2 = {.words = NULL, .size = 0};
+
 
 size_t strlen_(const char* begin) {
     char* end = begin;
@@ -75,6 +77,7 @@ char* copy(const char* begin_source, const char* end_source, char* begin_destina
     }
     return begin_destination;
 }
+
 
 char* copy_if(const char* begin_source, const char* end_source, char* begin_destination, int (*f)(int)) {
     char* start = begin_source;
@@ -192,3 +195,21 @@ void assert_string(const char* expected, char* got,
         fprintf(stderr, "%s - OK\n", func_name);
 }
 
+
+bool is_word_equal(const word_descriptor word1, const word_descriptor word2) {
+    char* begin1 = word1.begin;
+    char* begin2 = word2.begin;
+
+    while (begin1 < word1.end && begin2 < word2.end) {
+        if (*begin1 != *begin2)
+            return false;
+
+        begin1++;
+        begin2++;
+    }
+
+    if (word1.end - begin1 > 0 || word2.end - begin2 > 0)
+        return false;
+
+    return true;
+}

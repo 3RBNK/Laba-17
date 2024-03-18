@@ -14,6 +14,7 @@
 #include "string/task/change_word_order.h"
 #include "string/task/get_word_before_first_word_with_a.h"
 #include "string/task/find_last_common_word.h"
+#include "string/task/find_duplicate_words.h"
 
 
 
@@ -30,6 +31,7 @@ int main() {
     test_10_change_word_order();
     test_11_all_test_get_before_first_word_with_a();
     test_12_find_last_common_word();
+    test_13_find_duplicate_words();
 
 
     return 0;

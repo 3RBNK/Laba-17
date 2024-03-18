@@ -7,6 +7,7 @@
 
 
 #include "../string_.h"
+#include <assert.h>
 
 
 int get_separate_word(char* begin_search, word_descriptor* word) {
@@ -55,6 +56,38 @@ int counter_palindrome_words(char* s) {
     }
 
     return amount_palindrome;
+}
+
+
+void test_8_non_palindrome() {
+    char s[] = "palindrome, not, in, string";
+    assert(counter_palindrome_words(s) == 0);
+}
+
+
+void test_8_only_letters() {
+    char s[] = "a b c d";
+    assert(counter_palindrome_words(s) == 4);
+}
+
+
+void test_8_only_palindrome() {
+    char s[] = "radar, non, anna";
+    assert(counter_palindrome_words(s) == 3);
+}
+
+
+void test_8_different_string() {
+    char s[] = "radar, word, non, anna, vector, heh";
+    assert(counter_palindrome_words(s) == 4);
+}
+
+
+void test_8_counter_palindrome_word() {
+    test_8_non_palindrome();
+    test_8_only_letters();
+    test_8_only_palindrome();
+    test_8_different_string();
 }
 
 

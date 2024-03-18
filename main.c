@@ -26,7 +26,7 @@ int main() {
     test_4_replace_digit_to_space();
     test_5_replace_word_to_word();
     test_6_lexicographical_order(); // bool, поэтому не имеет вывода
-//    test_7_print_reverse_ordered(); // выводит строку
+    test_7_print_reverse_ordered(); // выводит строку
     test_8_counter_palindrome_word(); // bool, поэтому не имеет вывода
     test_9_rearranging_words();
     test_10_change_word_order();

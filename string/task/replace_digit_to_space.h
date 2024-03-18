@@ -5,7 +5,6 @@
 #ifndef CODE_REPLACE_DIGIT_TO_SPACE_H
 #define CODE_REPLACE_DIGIT_TO_SPACE_H
 
-#include "remove_non_letters.h"
 #include "../string_.h"
 
 #define ASCII_SHIFT_FOR_DIGIT 48
@@ -34,6 +33,41 @@ void replace_digit_to_space(char* s) {
     }
 
     *rec_ptr = '\0';
+}
+
+
+void test_4_empty() {
+    char s[] = "";
+    replace_digit_to_space(s);
+    ASSERT_STRING("", s);
+}
+
+
+void test_4_non_digit() {
+    char s[] = "abcd";
+    replace_digit_to_space(s);
+    ASSERT_STRING("abcd", s);
+}
+
+void test_4_non_letters() {
+    char s[] = "2";
+    replace_digit_to_space(s);
+    ASSERT_STRING("  ", s);
+}
+
+
+void test_4_letters_and_digit() {
+    char s[] = "a2b0c3";
+    replace_digit_to_space(s);
+    ASSERT_STRING("a  bc   ", s);
+}
+
+
+void test_4_replace_digit_to_space() {
+    test_4_empty();
+    test_4_non_digit();
+    test_4_non_letters();
+    test_4_letters_and_digit();
 }
 
 
